@@ -25,8 +25,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     TextView bitcoinTv, etheriumTv,textViewCurrency;
-//    private static String URL_DATA = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR";
-    private static String URL_DATA = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=NGN,USD,EUR,JPY,GBP,AUD,CAD,CHF,CNY,KES,GHS,UGX,ZAR,XAF,NZD,MYR,BND,GEL,RUB,I";
+    private static String URL_DATA = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=" +
+        "BTC,ETH&tsyms=NGN,USD,EUR,JPY,GBP,AUD,CAD," +
+        "CHF,CNY,KES,GHS,UGX,ZAR,XAF,NZD,MYR,BND,GEL,RUB,I";
     private RecyclerView recyclerView;
     private List<CardItems> cardItemsList;
     private RecyclerView.Adapter adapter;
