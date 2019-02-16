@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Crypto Monitor</string>
+    <string name="currency">CURRENCY</string>
+    <string name="btc">BTC</string>
+    <string name="eth">ETH</string>
+    <string name="ngn">NGN</string>
+</resources>
