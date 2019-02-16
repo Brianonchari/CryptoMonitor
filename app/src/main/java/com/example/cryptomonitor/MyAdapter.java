@@ -1,7 +1,6 @@
 package com.example.cryptomonitor;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public MyAdapter(List<CardItems> cardItemsList, Context context) {
 
         this.cardItemsList = cardItemsList;
@@ -41,8 +40,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         final double EthVal = cardItem.getEth_value();
 
         holder.currency.setText(curr);
-        holder.btc_value.setText(String.format("%1$,.2f",btcVal));
-        holder.eth_value.setText(String.format("%1$,.2f",EthVal));
+        holder.bitcoinTv.setText(String.format("%1$,.2f", btcVal));
+        holder.etheriumTv.setText(String.format("%1$,.2f", EthVal));
+
 
     }
 
@@ -51,16 +51,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         return cardItemsList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView btc_value, eth_value, currency;
+        TextView bitcoinTv, etheriumTv, currency;
         LinearLayout cardLinearLayout;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            btc_value = itemView.findViewById(R.id.bitcoinTv);
-            eth_value = itemView.findViewById(R.id.bitcoinTv);
+            bitcoinTv = itemView.findViewById(R.id.bitcoinTv);
+            etheriumTv = itemView.findViewById(R.id.etheriumTv);
             currency = itemView.findViewById(R.id.textViewCurrency);
             cardLinearLayout = itemView.findViewById(R.id.cardLinearLayout);
         }

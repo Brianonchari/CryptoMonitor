@@ -25,7 +25,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     TextView bitcoinTv, etheriumTv,textViewCurrency;
-    private static String URL_DATA = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR";
+//    private static String URL_DATA = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR";
+    private static String URL_DATA = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=NGN,USD,EUR,JPY,GBP,AUD,CAD,CHF,CNY,KES,GHS,UGX,ZAR,XAF,NZD,MYR,BND,GEL,RUB,I";
     private RecyclerView recyclerView;
     private List<CardItems> cardItemsList;
     private RecyclerView.Adapter adapter;
@@ -36,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //init Toolbar
-        Toolbar toolbar = findViewById(R.id.toolBar);
-         setSupportActionBar(null);
-         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//         Toolbar toolbar = findViewById(R.id.toolBar);
+//         setSupportActionBar(null);
+//         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //init TextView objects
 
@@ -54,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         loadURLData();
-        //TODO set adapter
+
+        adapter = new MyAdapter(cardItemsList, this);
+        recyclerView.setAdapter(adapter);
 
     }
 
